@@ -1,0 +1,16 @@
+{
+  "data":[
+    {
+      "box_id": 1,
+      "box_num": 100,
+      "box_name": "A100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "busy",
+      "box_status_cn": "使用"
+    }
+  ],
+  "error":"",
+  "status": "ok"
+}
