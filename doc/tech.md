@@ -10,8 +10,10 @@ install react, react-dom
 webpack configuration
   install babel-loader
   scss loader
+  extract css files
 node server building
 webpack-dev-server
 
 ?library, plugin
 babel-plugin-react-html-attrs: allow class, for html attributes.
+extract-text-webpack-plugin

@@ -40,4 +40,5 @@ docs/.jekyll-metadata
 # Folers to ignore
 bower_components
 node_modules
+dist
 
