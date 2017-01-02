@@ -17,3 +17,5 @@ webpack-dev-server
 ?library, plugin
 babel-plugin-react-html-attrs: allow class, for html attributes.
 extract-text-webpack-plugin
+axios: ajax library
+

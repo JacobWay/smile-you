@@ -11,9 +11,9 @@ var debug = process.env.NODE_ENV !== "production";
  * entry
  */
 var entry = {
-    //path.resolve(__dirname, "src/scripts")
+    //t: "./src/scripts/t.js",
     frontDesk: "./src/scripts/frontDesk.js",
-    t: "./src/scripts/t.js",
+    redux: "./src/scripts/redux.js",
 };
 
 
