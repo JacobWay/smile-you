@@ -9,6 +9,96 @@
       "time_begin_end": "19:00 - 21:00",
       "box_status": "busy",
       "box_status_cn": "使用"
+    },
+    {
+      "box_id": 2,
+      "box_num": 200,
+      "box_name": "B100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "busy",
+      "box_status_cn": "使用"
+    },
+    {
+      "box_id": 3,
+      "box_num": 300,
+      "box_name": "C100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "prepaid_session",
+      "box_status_cn": "买钟"
+    },
+    {
+      "box_id": 4,
+      "box_num": 400,
+      "box_name": "D100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "checkout",
+      "box_status_cn": "结账"
+    },
+    {
+      "box_id": 5,
+      "box_num": 500,
+      "box_name": "E100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "clean",
+      "box_status_cn": "清洁"
+    },
+    {
+      "box_id": 6,
+      "box_num": 600,
+      "box_name": "F100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "book",
+      "box_status_cn": "已预订"
+    },
+    {
+      "box_id": 7,
+      "box_num": 700,
+      "box_name": "G100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "lock",
+      "box_status_cn": "锁定"
+    },
+    {
+      "box_id": 8,
+      "box_num": 800,
+      "box_name": "H100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "dysfunction",
+      "box_status_cn": "故障"
+    },
+    {
+      "box_id": 9,
+      "box_num": 900,
+      "box_name": "I100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "test",
+      "box_status_cn": "测机"
+    },
+    {
+      "box_id": 10,
+      "box_num": 1000,
+      "box_name": "J100",
+      "box_type": "中包",
+      "box_capacity": 8,
+      "time_begin_end": "19:00 - 21:00",
+      "box_status": "alarm",
+      "box_status_cn": "提醒"
     }
   ],
   "error":"",
