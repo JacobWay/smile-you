@@ -13,7 +13,8 @@ var debug = process.env.NODE_ENV !== "production";
 var entry = {
     //t: "./src/scripts/t.js",
     frontDesk: "./src/scripts/frontDesk.js",
-    redux: "./src/scripts/redux.js",
+    //reduxCounter: "./src/scripts/reduxCounter.js",
+    counter: "./src/scripts/counter.js",
 };
 
 
