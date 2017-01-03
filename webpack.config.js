@@ -14,7 +14,8 @@ var entry = {
     //t: "./src/scripts/t.js",
     frontDesk: "./src/scripts/frontDesk.js",
     //reduxCounter: "./src/scripts/reduxCounter.js",
-    counter: "./src/scripts/counter.js",
+    //counter: "./src/scripts/counter.js",
+    productList: "./src/scripts/productList.js",
 };
 
 
