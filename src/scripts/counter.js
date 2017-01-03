@@ -43,9 +43,10 @@ class Counter extends Component{
     }
 
     render(){
+        let {value} = this.state;
         return(
             <div>
-                <h1>Counter: {this.state.value}</h1>
+                <h1 style={{color: value%2 ? 'red' : 'green'}}>Counter: {value}</h1>
 
                 <button onClick={this.increment}>+</button>
                 <button onClick={this.decrement}>-</button>
