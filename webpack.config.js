@@ -11,12 +11,12 @@ var debug = process.env.NODE_ENV !== "production";
  * entry
  */
 var entry = {
-    //t: "./src/scripts/t.js",
+    t: "./src/scripts/t.js",
     frontDesk: "./src/scripts/frontDesk.js",
     //reduxCounter: "./src/scripts/reduxCounter.js",
     //counter: "./src/scripts/counter.js",
     //productList: "./src/scripts/productList.js",
-    //tick: "./src/scripts/tick.js",
+    tick: "./src/scripts/tick.js",
     jsx: "./src/scripts/jsx.js",
 };
 
