@@ -15,7 +15,9 @@ var entry = {
     frontDesk: "./src/scripts/frontDesk.js",
     //reduxCounter: "./src/scripts/reduxCounter.js",
     //counter: "./src/scripts/counter.js",
-    productList: "./src/scripts/productList.js",
+    //productList: "./src/scripts/productList.js",
+    //tick: "./src/scripts/tick.js",
+    jsx: "./src/scripts/jsx.js",
 };
 
 
