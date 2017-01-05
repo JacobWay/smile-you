@@ -19,7 +19,8 @@ var entry = {
     //tick: "./src/scripts/tick.js",
     //jsx: "./src/scripts/jsx.js",
     //handlingEvents: "./src/scripts/handlingEvents.js",
-    conditionalRendering: "./src/scripts/conditionalRendering.js",
+    //conditionalRendering: "./src/scripts/conditionalRendering.js",
+    listsAndKeys: "./src/scripts/listsAndKeys.js",
 };
 
 
