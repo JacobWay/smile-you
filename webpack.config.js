@@ -16,8 +16,10 @@ var entry = {
     //reduxCounter: "./src/scripts/reduxCounter.js",
     //counter: "./src/scripts/counter.js",
     //productList: "./src/scripts/productList.js",
-    tick: "./src/scripts/tick.js",
-    jsx: "./src/scripts/jsx.js",
+    //tick: "./src/scripts/tick.js",
+    //jsx: "./src/scripts/jsx.js",
+    //handlingEvents: "./src/scripts/handlingEvents.js",
+    conditionalRendering: "./src/scripts/conditionalRendering.js",
 };
 
 
@@ -92,6 +94,6 @@ module.exports = {
         contentBase: "./",
         host: '127.0.0.1',
         port: 9999,
-        publicPath: output.publicPath
+        publicPath: output.publicPath,
     }
 };
