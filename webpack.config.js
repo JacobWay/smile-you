@@ -20,7 +20,9 @@ var entry = {
     //jsx: "./src/scripts/jsx.js",
     //handlingEvents: "./src/scripts/handlingEvents.js",
     //conditionalRendering: "./src/scripts/conditionalRendering.js",
-    listsAndKeys: "./src/scripts/listsAndKeys.js",
+    //listsAndKeys: "./src/scripts/listsAndKeys.js",
+    //forms: "./src/scripts/forms.js",
+    liftingStateUp: "./src/scripts/liftingStateUp.js",
 };
 
 
