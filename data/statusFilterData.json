@@ -1,0 +1,35 @@
+{
+    "name": "状态",
+    "name_en": "status",
+    "data": [{
+        "serial": 0,
+        "value": "空闲"
+    }, {
+        "serial": 1,
+        "value": "使用"
+    }, {
+        "serial": 2,
+        "value": "买钟"
+    }, {
+        "serial": 3,
+        "value": "结账"
+    }, {
+        "serial": 4,
+        "value": "清洁"
+    }, {
+        "serial": 5,
+        "value": "已预订"
+    }, {
+        "serial": 6,
+        "value": "锁定"
+    }, {
+        "serial": 7,
+        "value": "故障"
+    }, {
+        "serial": 8,
+        "value": "测机"
+    }, {
+        "serial": 9,
+        "value": "提醒"
+    }]
+}

@@ -9,7 +9,7 @@ require("../scss/frontDesk.scss");
 class FrontDesk extends Component{
     render(){
         return(
-            <div>
+            <div class="ca-wrap">
                 <SearchBar />
                 <StatusBar />
                 <BoxList />

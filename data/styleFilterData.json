@@ -1,0 +1,14 @@
+{
+    "name": "类型",
+    "name_en": "style",
+    "data": [{
+        "serial": 0,
+        "value": "大包"
+    }, {
+        "serial": 1,
+        "value": "中包"
+    }, {
+        "serial": 2,
+        "value": "小包"
+    }]
+}

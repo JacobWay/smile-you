@@ -1,0 +1,17 @@
+{
+    "name": "区域",
+    "name_en": "area",
+    "data": [
+        {
+            "serial": 0, "value": "一楼"
+        },
+        {
+            "serial": 1, "value": "二楼"
+        },
+        {
+            "serial": 2, "value": "三楼"
+        }
+    ]
+}
+
+

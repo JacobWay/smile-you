@@ -1,73 +1,11 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
-const areaFilterData = {
-    name: "区域",
-    name_en: "area",
-    data: [
-        {
-            serial: 0, value: "一楼"
-        },
-        {
-            serial: 1, value: "二楼"
-        },
-        {
-            serial: 2, value: "三楼"
-        },
-    ]
-};
+// area, style, status json api url
+const areaFilterDataUrl = "../../data/areaFilterData.json";
+const styleFilterDataUrl = "../../data/styleFilterData.json";
+const statusFilterDataUrl = "../../data/statusFilterData.json";
 
-const styleFilterData = {
-    name: "类型",
-    name_en: "style",
-    data: [
-        {
-            serial: 0, value: "大包"
-        },
-        {
-            serial: 1, value: "中包"
-        },
-        {
-            serial: 2, value: "小包"
-        },
-    ]
-};
-
-const statusFilterData = {
-    name: "状态",
-    name_en: "status",
-    data: [
-        {
-            serial: 0, value: "空闲"
-        },
-        {
-            serial: 1, value: "使用"
-        },
-        {
-            serial: 2, value: "买钟"
-        },
-        {
-            serial: 3, value: "结账"
-        },
-        {
-            serial: 4, value: "清洁"
-        },
-        {
-            serial: 5, value: "已预订"
-        },
-        {
-            serial: 6, value: "锁定"
-        },
-        {
-            serial: 7, value: "故障"
-        },
-        {
-            serial: 8, value: "测机"
-        },
-        {
-            serial: 9, value: "提醒"
-        },
-    ]
-};
 
 class SearchBar extends Component{
     constructor(props){
@@ -77,6 +15,18 @@ class SearchBar extends Component{
             areaValue: '-1',
             styleValue: '-1',
             statusValue: '-1',
+            areaFilterData: {
+                name: '',
+                data: []
+            },
+            styleFilterData: {
+                name: '',
+                data: []
+            },
+            statusFilterData: {
+                name: '',
+                data: []
+            }
         }
     }
 
@@ -98,13 +48,62 @@ class SearchBar extends Component{
         })
     }
 
-    componentsDidMount = () => {
+    getAreaFilterData = () => {
+        axios.get(areaFilterDataUrl)
+            .then((res) => {
+                console.log("fetach areaFilterData...", res);
+                this.setState({
+                    areaFilterData: res.data
+                });
+            })
+            .catch(function(err){
+                console.log("error in fetching getAreaFilterData... ", err);
+            });
+    }
+
+    getStyleFilterData = () => {
+        axios.get(styleFilterDataUrl)
+            .then((res) => {
+                console.log("fetach styleFilterData...", res);
+                this.setState({
+                    styleFilterData: res.data
+                });
+            })
+            .catch(function(err){
+                console.log("error in fetching getStyleFilterData... ", err);
+            });
+    }
+
+    getStatusFilterData = () => {
+        axios.get(statusFilterDataUrl)
+            .then((res) => {
+                console.log("fetach statusFilterData...", res);
+                this.setState({
+                    statusFilterData: res.data
+                });
+            })
+            .catch(function(err){
+                console.log("error in fetching getStatusFilterData... ", err);
+            });
+    }
+
+
+    componentDidMount = () => {
+        this.getAreaFilterData();
+        this.getStyleFilterData();
+        this.getStatusFilterData();
     }
 
 
     render(){
         console.log("rendering in SearchBar...");
-        const {presetValue, value} = this.state;
+        const {
+            presetValue, 
+            value, 
+            areaFilterData,
+            styleFilterData,
+            statusFilterData
+        } = this.state;
         return(
             <div class="ca-search">
                 <ul>
