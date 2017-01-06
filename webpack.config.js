@@ -22,7 +22,8 @@ var entry = {
     //conditionalRendering: "./src/scripts/conditionalRendering.js",
     //listsAndKeys: "./src/scripts/listsAndKeys.js",
     //forms: "./src/scripts/forms.js",
-    liftingStateUp: "./src/scripts/liftingStateUp.js",
+    //liftingStateUp: "./src/scripts/liftingStateUp.js",
+    compositionInheritance: "./src/scripts/compositionInheritance.js",
 };
 
 
