@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var rootPath = path.join(__dirname); 
@@ -94,6 +95,13 @@ moduleObj.loaders = loaders;
  */
 var plugins = [];
 plugins.push(new ExtractTextPlugin("css/[name].css"));
+
+plugins.push(
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: 'jquery'
+    })
+);
 
 
 module.exports = {
