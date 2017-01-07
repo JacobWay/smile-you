@@ -11,6 +11,7 @@ const alarmsDataUrl = "../../data/alarmsData.json"
 class NavBar extends Component{
     constructor(props){
         super(props);
+        this.mobileMenuId = _.uniqueId("mobileMenu_");
     }
 
     fetchAlarmsData = () => {
@@ -28,6 +29,14 @@ class NavBar extends Component{
         this.fetchAlarmsData();
     }
 
+    toggleMenu = (e) => {
+        const element = document.getElementById(this.mobileMenuId);
+        let display = element.style.display;
+        display = display === "block" ? "none" : "block"
+        element.style.display = display;
+        
+    }
+
     render(){
         console.log("rending in NavBar...");
         const {alarmsObj, name} = this.props;
@@ -39,35 +48,50 @@ class NavBar extends Component{
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target={this.mobileMenuId} aria-expanded="false" onClick={this.toggleMenu}>
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          {/*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target={this.mobileMenuId} aria-expanded="false" >
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>*/}
                         <a class="navbar-brand" href="#">笑掌柜系统</a>
                     </div>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-envelope"></span>
-                                消息
-                                <span class="badge">{num}</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                {element}
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-user"></span>
-                                用户{name}
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">收银交接班</a></li>
-                                <li><a href="#">修改密码</a></li>
-                                <li><a href="#">退出</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id={this.mobileMenuId}>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fa fa-envelope"></span>
+                                    消息
+                                    <span class="badge">{num}</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    {element}
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fa fa-user"></span>
+                                    用户{name}
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">收银交接班</a></li>
+                                    <li><a href="#">修改密码</a></li>
+                                    <li><a href="#">退出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         );
