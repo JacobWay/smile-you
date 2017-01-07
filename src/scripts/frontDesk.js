@@ -8,6 +8,7 @@ import {SearchBar} from "../components/SearchFrontDesk.js";
 import {Breadcrumbs} from "../components/Breadcrumbs.js";
 import {Messages} from "../components/Messages.js";
 import {UserOperation} from "../components/UserOperation.js";
+import {NavBar} from "../components/NavBar.js";
 
 require("../scss/base.scss");
 require("../scss/frontDesk.scss");
@@ -18,7 +19,6 @@ const breadcrumbs = [
     {'uri':'', 'name':"首页"}
 ];
 
-const MessageNum = 3;
 const userName = "0001";
 
 class FrontDesk extends Component{
@@ -33,8 +33,34 @@ class FrontDesk extends Component{
     }
 }
 
+class Main extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            alarmsObj: {
+                num: 0,
+                alarms: []
+            }
+        };
+    }
+
+    flowAlarmsData = (data) => {
+        this.setState({
+            alarmsObj: data
+        });
+    }
+
+    render(){
+        return(
+            <NavBar
+                name={userName}
+                flowAlarmsData={this.flowAlarmsData}
+                alarmsObj={this.state.alarmsObj}
+            />
+        );
+    }
+}
+
 let mountNode = document.getElementById("ktvBox");
-render(<UserOperation 
-            name={userName}
-        />, mountNode);
+render(<Main />, mountNode);
 
