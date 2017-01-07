@@ -4,9 +4,18 @@ import {BoxList} from "../components/BoxList.js";
 import {StatusBar} from "../components/StatusBar.js";
 import {SearchBar} from "../components/SearchFrontDesk.js";
 import {Breadcrumbs} from "../components/Breadcrumbs.js";
+import {Messages} from "../components/Messages.js";
+
 require("../scss/base.scss");
 require("../scss/frontDesk.scss");
 require('font-awesome/css/font-awesome.css');
+
+const breadcrumbs = [
+    {'uri':'#', 'name':"收银"}, 
+    {'uri':'', 'name':"首页"}
+];
+
+const MessageNum = 3;
 
 class FrontDesk extends Component{
     render(){
@@ -21,10 +30,7 @@ class FrontDesk extends Component{
 }
 
 let mountNode = document.getElementById("ktvBox");
-render(<Breadcrumbs 
-            breadcrumbs={[
-                {'uri':'#', 'name':"收银"}, 
-                {'uri':'', 'name':"首页"}
-            ]}
+render(<Messages 
+            num={MessageNum}
         />, mountNode);
 

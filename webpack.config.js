@@ -23,7 +23,7 @@ var entry = {
     //listsAndKeys: "./src/scripts/listsAndKeys.js",
     //forms: "./src/scripts/forms.js",
     //liftingStateUp: "./src/scripts/liftingStateUp.js",
-    compositionInheritance: "./src/scripts/compositionInheritance.js",
+    //compositionInheritance: "./src/scripts/compositionInheritance.js",
 };
 
 
@@ -65,7 +65,9 @@ var loaderScss, loaderDev, loaderProd;
 loaderDev = {
     test: /\.scss$/,
     exclude: /(node_modules|bower_components)/,
-    loaders: ["style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
+    //loaders: ["style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
+    include: scssPath,
+    loader: ExtractTextPlugin.extract(["css?sourceMap", "sass"])
 };
 
 //var extractScss = new ExtractTextPlugin("css/[name].css");
@@ -73,7 +75,7 @@ loaderProd = {
     test: /\.scss$/,
     exclude: /(node_modules|bower_components)/,
     include: scssPath,
-    loader: ExtractTextPlugin.extract(["css", "sass"])
+    loader: ExtractTextPlugin.extract(["css?sourceMap", "sass"])
 };
 loaderScss = debug ? loaderDev : loaderProd;
 loaders.push(loaderScss);
@@ -95,7 +97,7 @@ plugins.push(new ExtractTextPlugin("css/[name].css"));
 
 
 module.exports = {
-    devtool: "source-map",
+    devtool: "inline-source-map",
     entry: entry,
     output: output,
     module: moduleObj,
