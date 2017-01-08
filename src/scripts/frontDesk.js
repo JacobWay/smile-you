@@ -77,12 +77,13 @@ class Main extends Component{
                    menuList={this.state.menuList} 
                    setMenuData={this.setMenuData} 
                />
-               <BoxList />
             </div>
         );
     }
 }
 
-let mountNode = document.getElementById("ktvBox");
-render(<Main />, mountNode);
+let menuWrapperNode = document.getElementById("menuWrapper");
+let ktvBoxNode = document.getElementById("ktvBox");
+render(<Main />, menuWrapperNode);
+render(<BoxList />, ktvBoxNode);
 

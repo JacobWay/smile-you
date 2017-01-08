@@ -11,13 +11,12 @@ class BoxList extends Component{
         }
     }
 
-    fetchData(){
+    getData(){
         let dataURL = "../../data/box.json";
         let self = this;
         axios
             .get(dataURL)
             .then(function(result){
-                console.log("fetch data...");
                 let data = result.data;
                 if(data.status !== "ok"){
                     throw data.error;
@@ -27,10 +26,13 @@ class BoxList extends Component{
                     });
                 }
             })
+            .catch(function(err){
+                console.log("error in getData of BoxList... ", err);
+            });
     }
 
     componentDidMount(){
-        this.dataRequest = this.fetchData();
+        this.dataRequest = this.getData();
     }
 
     componentWillUnmount(){

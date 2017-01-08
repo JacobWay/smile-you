@@ -19,3 +19,6 @@ babel-plugin-react-html-attrs: allow class, for html attributes.
 extract-text-webpack-plugin
 axios: ajax library
 
+?router
+"/": top navigation + side bar
+index page: cashier index page

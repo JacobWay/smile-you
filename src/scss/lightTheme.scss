@@ -1,5 +1,131 @@
 $hoverColor: #eee;
 
+.bw {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bw::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+@media (min-width: 576px){
+    .bw {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 768px){
+    .bw {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 880px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px){
+    .bw {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 950px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px){
+    .bw {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 1100px;
+        max-width: 100%;
+    }
+}
+
+.dd {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.dd::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+@media (min-width: 576px){
+    .dd {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+}
+
+@media (min-width: 768px){
+    .dd {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+}
+
+@media (min-width: 992px){
+    .dd {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+}
+
+@media (min-width: 1200px){
+    .dd {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+}
+
+.ev {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 576px){
+    .ev {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 768px){
+    .ev {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 992px){
+    .ev {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 1200px){
+    .ev {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.ev {
+    float: left;
+    width: 75%;
+}
+
 .ep {
     position: relative;
     min-height: 1px;
@@ -45,6 +171,13 @@ $hoverColor: #eee;
     }
 }
 
+@media (min-width: 768px) {
+    .bio {
+        display: block !important;
+        height: auto !important;
+    }
+}
+
 .activated{
     background-color: $hoverColor;
 }
@@ -56,3 +189,4 @@ $hoverColor: #eee;
 .sideSubMenu{
     display: none;
 }
+

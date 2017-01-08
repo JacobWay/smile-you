@@ -91,7 +91,9 @@ class SideBar extends Component{
         return(
             <div class="ep">
                 <nav class="bjr">
-                    {element}
+                    <div class="bio">
+                        {element}
+                    </div>
                 </nav>
             </div>
         );
