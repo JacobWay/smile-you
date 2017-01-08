@@ -9,10 +9,13 @@ import {Breadcrumbs} from "../components/Breadcrumbs.js";
 import {Messages} from "../components/Messages.js";
 import {UserOperation} from "../components/UserOperation.js";
 import {NavBar} from "../components/NavBar.js";
+import {SideBar} from "../components/SideBar.js";
 
+require('font-awesome/css/font-awesome.css');
 require("../scss/base.scss");
 require("../scss/frontDesk.scss");
-require('font-awesome/css/font-awesome.css');
+require("../scss/lightTheme.scss");
+
 
 const breadcrumbs = [
     {'uri':'#', 'name':"收银"}, 
@@ -40,7 +43,13 @@ class Main extends Component{
             alarmsObj: {
                 num: 0,
                 alarms: []
-            }
+            },
+            menuList: [
+                {
+                    name: '',
+                    subMenu: []
+                }
+            ]
         };
     }
 
@@ -50,13 +59,26 @@ class Main extends Component{
         });
     }
 
+    setMenuData = (data) => {
+        this.setState({
+            menuList: data
+        });
+    }
+
     render(){
         return(
-            <NavBar
-                name={userName}
-                flowAlarmsData={this.flowAlarmsData}
-                alarmsObj={this.state.alarmsObj}
-            />
+            <div>
+                <NavBar
+                    name={userName}
+                    flowAlarmsData={this.flowAlarmsData}
+                    alarmsObj={this.state.alarmsObj}
+                />
+               <SideBar 
+                   menuList={this.state.menuList} 
+                   setMenuData={this.setMenuData} 
+               />
+               <BoxList />
+            </div>
         );
     }
 }
