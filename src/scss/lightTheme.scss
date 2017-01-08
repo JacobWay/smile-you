@@ -1,0 +1,54 @@
+$hoverColor: #eee;
+
+.ep {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 576px){
+    .ep {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+@media (min-width: 768px){
+    .ep {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+@media (min-width: 992px){
+    .ep {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+@media (min-width: 1200px){
+    .ep {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (min-width: 768px){
+    .ep {
+        float: left;
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px){
+    .bjr {
+        margin-right: 40px;
+    }
+}
+
+.activated{
+    background-color: $hoverColor;
+}
+
+.angle_{
+    float: right;
+}

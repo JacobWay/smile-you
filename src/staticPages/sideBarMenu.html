@@ -3,159 +3,56 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Breadcrumbs</title>
+    <title>Side Bar Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="../../dist/css/frontDesk.css" />
+    <link rel="stylesheet" href="../../dist/css/lightTheme.css" />
 </head>
 
 <body>
-    <div class="leftNav" style="height: 302px;">
-        <div class="panel-group" id="accordion2">
-            <!--导航处展示的网站logo start-->
-            <div class="panel-heading">
-                <div><img src="../images/logo.png"></div>
-            </div>
-            <!--导航处展示的网站logo end-->
-            <!--收银 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    <a class="accordion-toggle"><span class="fa fa-credit-card"></span>收银<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#" class="panelActive">首页</a></li>
-                            <li><a href="#">预定管理</a></li>
-                            <li><a href="#">包厢互动</a></li>
-                            <li><a href="#">账单明细查询</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--收银 end-->
-            <!--超市 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    <a class="accordion-toggle"><span class="fa fa-shopping-cart"></span>超市<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">下单</a></li>
-                            <li><a href="#">退单</a></li>
-                            <li><a href="#">已点列表</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--超市 end-->
-            <!--仓库 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                    <a class="accordion-toggle"><span class="fa fa-home"></span>仓库<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">物品入库</a></li>
-                            <li><a href="#">物品调拨</a></li>
-                            <li><a href="#">库存查询</a></li>
-                            <li><a href="#">库存报警</a></li>
-                            <li><a href="#">物品盘点</a></li>
-                            <li><a href="#">物品退货</a></li>
-                            <li><a href="#">物品报损</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--仓库 end-->
-            <!--财务 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                    <a class="accordion-toggle"><span class="fa fa-cny"></span>财务<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">反结账</a></li>
-                            <li><a href="#">收款确认</a></li>
-                            <li><a href="#">日营业报表</a></li>
-                            <li><a href="#">调整金额报表</a></li>
-                            <li><a href="#">账单明细查询</a></li>
-                            <li><a href="#">计费方式明细</a></li>
-                            <li><a href="#">销售单据明细</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--财务 end-->
-            <!--会员 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-                    <a class="accordion-toggle"><span class="fa fa-diamond"></span>会员<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseFive" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">会员信息</a></li>
-                            <li><a href="#">会员卡其它信息</a></li>
-                            <li><a href="#">会员升级查询</a></li>
-                            <li><a href="#">会员办卡查询</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--会员 end-->
-            <!--后台管理 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
-                    <a class="accordion-toggle"><span class="fa fa-cog"></span>后台管理<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseSix" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">收银设置</a></li>
-                            <li><a href="#">计费方式设置</a></li>
-                            <li><a href="#">付款方式设置</a></li>
-                            <li><a href="#">特殊日期设置</a></li>
-                            <li><a href="#">买断设置</a></li>
-                            <li><a href="#">小票打印机设置</a></li>
-                            <li><a href="#">包厢设置</a></li>
-                            <li><a href="#">时段钟点费设置</a></li>
-                            <li><a href="#">营业时间设置</a></li>
-                            <li><a href="#">仓库设置</a></li>
-                            <li><a href="#">物品设置</a></li>
-                            <li><a href="#">出品设置</a></li>
-                            <li><a href="#">人员管理</a></li>
-                            <li><a href="#">权限管理</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--后台管理 end-->
-            <!--店长 start-->
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
-                    <a class="accordion-toggle"><span class="fa fa-user"></span>店长<span class="fa fa-angle-right angle"></span></a>
-                </div>
-                <div id="collapseSeven" class="panel-collapse collapse" style="height: 0px;">
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">操作日志</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--店长 end-->
-        </div>
-    </div>
 
+    <div class="ep">
+        <nav class="bjr">
+            <ul class="nav nav-pills nav-stacked sideMenu">
+                <li role="presentation" class="collapse active">
+                    <a href="#">Home<span class="fa fa-angle-right angle_"></span></a>
+                    <ul class="nav nav-pills nav-stacked sideSubMenu">
+                        <li role="presentation">
+                            <a href"#">H1</a>
+                        </li>
+                        <li role="presentation">
+                            <a href"#">H1</a>
+                        </li>
+                        <li role="presentation">
+                            <a href"#">H1</a>
+                        </li>
+                    </ul>
+                </li>
+                <li role="presentation" class="collapse">
+                    <a href="#">Home<span class="fa fa-angle-right angle_"></span></a>
+                    <ul class="nav nav-pills nav-stacked sideSubMenu">
+                        <li role="presentation">
+                            <a href"#">H1</a>
+                        </li>
+                        <li role="presentation">
+                            <a href"#">H1</a>
+                        </li>
+                        <li role="presentation">
+                            <a href"#">H1</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
     <script src="../../node_modules/jquery/dist/jquery.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../dist/js/lightTheme.bundle.js"></script>
 </body>
 
 </html>

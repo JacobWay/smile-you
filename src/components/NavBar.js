@@ -48,19 +48,13 @@ class NavBar extends Component{
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target={this.mobileMenuId} aria-expanded="false" onClick={this.toggleMenu}>
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                          </button>
-                          {/*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target={this.mobileMenuId} aria-expanded="false" >
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target={this.mobileMenuId} aria-expanded="false" onClick={this.toggleMenu}>
                             <span class="sr-only">Toggle Navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </button>*/}
+                        </button>
                         <a class="navbar-brand" href="#">笑掌柜系统</a>
                     </div>
 

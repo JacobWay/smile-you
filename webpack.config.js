@@ -25,6 +25,7 @@ var entry = {
     //forms: "./src/scripts/forms.js",
     //liftingStateUp: "./src/scripts/liftingStateUp.js",
     //compositionInheritance: "./src/scripts/compositionInheritance.js",
+    lightTheme: "./src/scripts/lightTheme.js",
 };
 
 
