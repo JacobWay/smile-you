@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
+import {Router, Route, browserHistory, hashHistory, IndexRoute} from "react-router";
 import {Bootstrap} from "bootstrap";
 
 import {BoxList} from "../components/BoxList.js";
@@ -77,13 +78,35 @@ class Main extends Component{
                    menuList={this.state.menuList} 
                    setMenuData={this.setMenuData} 
                />
+               {this.props.children}
             </div>
+        );
+    }
+}
+
+class Test extends Component{
+    render(){
+        return(
+            <h1>Hi, Test</h1>
         );
     }
 }
 
 let menuWrapperNode = document.getElementById("menuWrapper");
 let ktvBoxNode = document.getElementById("ktvBox");
-render(<Main />, menuWrapperNode);
-render(<BoxList />, ktvBoxNode);
+//render(<Main />, menuWrapperNode);
+//render(<BoxList />, ktvBoxNode);
 
+// use react router
+render((
+    <Router history={hashHistory}>
+        <Route path="/" component={Main}>
+        </Route>
+    </Router>
+), menuWrapperNode);
+render((
+    <Router history={hashHistory}>
+        <Route path="/" component={BoxList}>
+        </Route>
+    </Router>
+), ktvBoxNode);
