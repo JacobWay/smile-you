@@ -14,19 +14,19 @@ class NavBar extends Component{
         this.mobileMenuId = _.uniqueId("mobileMenu_");
     }
 
-    fetchAlarmsData = () => {
+    getAlarmsData = () => {
         axios.get(alarmsDataUrl)
         .then( (res) => {
             const data = res.data;
-            this.props.flowAlarmsData(data);
+            this.props.setAlarmsData(data);
         } )
         .catch( (err) => {
-            console.log("error in fetchAlarmsData... ", err);
+            console.log("error in getAlarmsData... ", err);
         } );
     }
 
     componentDidMount = () => {
-        this.fetchAlarmsData();
+        this.getAlarmsData();
     }
 
     toggleMenu = (e) => {

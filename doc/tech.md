@@ -22,3 +22,7 @@ axios: ajax library
 ?router
 "/": top navigation + side bar
 index page: cashier index page
+
+?variable name
+set___Data: flow the ajax data between components.
+get___Data: get the ajax data from api url.

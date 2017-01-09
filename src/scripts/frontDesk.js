@@ -54,7 +54,7 @@ class Main extends Component{
         };
     }
 
-    flowAlarmsData = (data) => {
+    setAlarmsData = (data) => {
         this.setState({
             alarmsObj: data
         });
@@ -67,14 +67,15 @@ class Main extends Component{
     }
 
     render(){
+        console.log("rendering in Main of frontDesk.js...");
         return(
             <div>
                 <NavBar
                     name={userName}
-                    flowAlarmsData={this.flowAlarmsData}
+                    setAlarmsData={this.setAlarmsData}
                     alarmsObj={this.state.alarmsObj}
                 />
-               <SideBar 
+                <SideBarWrapper 
                    menuList={this.state.menuList} 
                    setMenuData={this.setMenuData} 
                />
@@ -82,6 +83,29 @@ class Main extends Component{
             </div>
         );
     }
+}
+
+function SideBarWrapper(props){
+    return(
+        <div class="ep">
+            <nav class="bjr">
+                <div class="bio">
+                   <SideBar 
+                       menuList={props.menuList} 
+                       setMenuData={props.setMenuData} 
+                   />
+                </div>
+            </nav>
+        </div>
+    );
+}
+
+function BoxWrapper(){
+    return(
+        <div class="ev">
+            <BoxList />
+        </div>
+    );
 }
 
 class Test extends Component{
@@ -92,21 +116,17 @@ class Test extends Component{
     }
 }
 
-let menuWrapperNode = document.getElementById("menuWrapper");
-let ktvBoxNode = document.getElementById("ktvBox");
-//render(<Main />, menuWrapperNode);
+const menuWrapperNode = document.getElementById("menuWrapper");
+const ktvBoxNode = document.getElementById("ktvBox");
+const frontDeskNode = document.getElementById("frontDesk");
+//render(<Main />, frontDeskNode);
 //render(<BoxList />, ktvBoxNode);
 
 // use react router
 render((
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
+            <IndexRoute component={BoxWrapper} />
         </Route>
     </Router>
-), menuWrapperNode);
-render((
-    <Router history={hashHistory}>
-        <Route path="/" component={BoxList}>
-        </Route>
-    </Router>
-), ktvBoxNode);
+), frontDeskNode);

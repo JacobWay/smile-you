@@ -2,7 +2,7 @@
     "name": "收银",
     "subMenu": [{
         "uri_cn": "首页",
-        "uri_en": "#"
+        "uri_en": "/"
     }, {
         "uri_cn": "预定管理",
         "uri_en": "#"

@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import _ from "lodash";
 import axios from "axios";
+import {Link} from "react-router";
 
+// menu data url
 const menuDataUrl = "../../data/menuData.json";
 
 
@@ -17,12 +19,13 @@ class SideBar extends Component{
             setMenuData(res.data);
         } )
         .catch( (err) => {
+            console.log("error in getMenuData of SideBar.js... ", err);
         } );
     }
 
     collapseMenu = (e) => {
         $(".sideMenu").on("click", "li", function(e){
-            console.log("clicking... ", e);
+            e.preventDefault();
             // click only works on the right li element
             // but add color class of the activated submenu
             var currentTarget = $(e.currentTarget);
@@ -55,8 +58,6 @@ class SideBar extends Component{
             var delegateTarget = $(e.delegateTarget);
             $(delegateTarget).find(".active").removeClass("active");
             $(currentTarget).addClass("active");
-            
-
         });
     }
 
@@ -65,8 +66,12 @@ class SideBar extends Component{
         this.collapseMenu();
     }
 
+    installDataAndEvent = () => {
+        
+    }
+
     render(){
-        console.log("rendering in SideBar...");
+        console.log("in rendering of SideBar.js...");
         const {menuList} = this.props;
         let element = (
             <ul class="nav nav-pills nav-stacked sideMenu">
@@ -89,13 +94,7 @@ class SideBar extends Component{
             </ul>
         );
         return(
-            <div class="ep">
-                <nav class="bjr">
-                    <div class="bio">
-                        {element}
-                    </div>
-                </nav>
-            </div>
+            element
         );
     }
 }
