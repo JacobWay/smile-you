@@ -66,10 +66,6 @@ class SideBar extends Component{
         this.collapseMenu();
     }
 
-    installDataAndEvent = () => {
-        
-    }
-
     render(){
         console.log("in rendering of SideBar.js...");
         const {menuList} = this.props;

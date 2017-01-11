@@ -26,3 +26,9 @@ index page: cashier index page
 ?variable name
 set___Data: flow the ajax data between components.
 get___Data: get the ajax data from api url.
+
+
+?bugs
+
+?Menu does not collapse when click first time, next time works fine
+<a>tag link to the root path, rendering again the whole page.
