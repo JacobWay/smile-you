@@ -1,9 +1,22 @@
 import {GET_ALARMS, RECEIVE_ALARMS} from "../actions/navBarA.js";
 
-const navBarR = (state, action) => {
+const navBarR = (state={
+    num: 3,
+    alarmsObj: []
+}, action) => {
+    return {
+        num: 3,
+        alarmsObj: ["abc"]
+    }
+    const {num, alarmsObj} = action.data;
     switch (action.type){
         case RECEIVE_ALARMS:
-            return action.data;
+            newState = {
+                ...state,
+                num,
+                alarmsObj
+            }
+            return newState;
         default:
             return state;
     }

@@ -4,6 +4,7 @@ import {Messages} from "./Messages.js";
 import {UserOperation} from "./UserOperation.js";
 import {uniqueId} from "lodash/uniqueId";
 import axios from "axios";
+import {fetchAlarmsA} from "../actions/navBarA.js";
 
 
 class NavBar extends Component{
@@ -14,6 +15,9 @@ class NavBar extends Component{
 
 
     componentDidMount = () => {
+        console.log("componentDidMount in c/NavBar.js...");
+        const {dispatch} = this.props;
+        dispatch(fetchAlarmsA());
     }
 
     toggleMenu = (e) => {
