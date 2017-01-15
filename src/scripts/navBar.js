@@ -1,17 +1,17 @@
+import Bootstrap from "bootstrap";
 import React, {Component} from "react";
 import {render} from "react-dom";
 import {createStore, applyMiddleware} from "redux";
-import {navBarR} from "../reducers/navBarR.js";
 import {Provider, connect} from "react-redux";
-import {NavBar} from "../components/NavBar.js";
 import thunkMiddleware from "redux-thunk";
 import createLogger from "redux-logger";
+import {navBarR} from "../reducers/navBarR.js";
+import {NavBar} from "../components/NavBar.js";
 
 const mapStateToProps = (state) => {
-    const {num, alarmsObj} = state;
+    const {alarmsObj} = state;
     const name = "Jacob";
     return {
-        num,
         alarmsObj,
         name
     }
