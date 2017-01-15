@@ -14,6 +14,7 @@ var debug = process.env.NODE_ENV !== "production";
 var entry = {
     t: "./src/scripts/t.js",
     frontDesk: "./src/scripts/frontDesk.js",
+    navBar: "./src/scripts/navBar.js",
     //reduxCounter: "./src/scripts/reduxCounter.js",
     //counter: "./src/scripts/counter.js",
     //productList: "./src/scripts/productList.js",
@@ -25,7 +26,7 @@ var entry = {
     //forms: "./src/scripts/forms.js",
     //liftingStateUp: "./src/scripts/liftingStateUp.js",
     //compositionInheritance: "./src/scripts/compositionInheritance.js",
-    lightTheme: "./src/scripts/lightTheme.js",
+    //lightTheme: "./src/scripts/lightTheme.js",
 };
 
 

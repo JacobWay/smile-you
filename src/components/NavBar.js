@@ -5,8 +5,6 @@ import {UserOperation} from "./UserOperation.js";
 import {uniqueId} from "lodash/uniqueId";
 import axios from "axios";
 
-// local json data
-const alarmsDataUrl = "../../data/alarmsData.json"
 
 class NavBar extends Component{
     constructor(props){
@@ -14,19 +12,8 @@ class NavBar extends Component{
         this.mobileMenuId = _.uniqueId("mobileMenu_");
     }
 
-    getAlarmsData = () => {
-        axios.get(alarmsDataUrl)
-        .then( (res) => {
-            const data = res.data;
-            this.props.setAlarmsData(data);
-        } )
-        .catch( (err) => {
-            console.log("error in getAlarmsData... ", err);
-        } );
-    }
 
     componentDidMount = () => {
-        this.getAlarmsData();
     }
 
     toggleMenu = (e) => {
@@ -38,7 +25,7 @@ class NavBar extends Component{
     }
 
     render(){
-        console.log("rending in NavBar...");
+        console.log("rending in NavBar.js...");
         const {alarmsObj, name} = this.props;
         const {num, alarms} = alarmsObj;
         const element = alarms.map( (item, i) => {
