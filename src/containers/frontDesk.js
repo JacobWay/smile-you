@@ -17,6 +17,9 @@ import {navBarR} from "../reducers/navBarR.js";
 import {sideBarR} from "../reducers/sideBarR.js";
 import {boxListR} from "../reducers/boxListR.js";
 
+import {fetchAlarmsA} from "../actions/navBarA.js";
+import {fetchSideBarA} from "../actions/sideBarA.js";
+
 
 require('font-awesome/css/font-awesome.css');
 require("../scss/base.scss");
