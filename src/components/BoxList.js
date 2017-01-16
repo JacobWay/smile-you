@@ -13,6 +13,7 @@ class BoxList extends Component{
     }
 
     componentDidMount(){
+        console.log("componentDidMount of c/BoxList.js...");
         const {dispatch} = this.props;
         dispatch(fetchBoxListA());
     }

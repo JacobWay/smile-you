@@ -1,7 +1,4 @@
 import React, {Component} from "react";
-import {render} from "react-dom";
-import {Messages} from "./Messages.js";
-import {UserOperation} from "./UserOperation.js";
 import {uniqueId} from "lodash/uniqueId";
 import axios from "axios";
 import {fetchAlarmsA} from "../actions/navBarA.js";

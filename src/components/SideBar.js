@@ -60,7 +60,7 @@ class SideBar extends Component{
                 {menuList.map( (menu) => {
                     return(
                         <li role="presentation" class="collapse" key={_.uniqueId("menu_")}>
-                            <a href="#">{menu.name}<span class="fa fa-angle-right angle_"></span></a>
+                            <Link href="#">{menu.name}<span class="fa fa-angle-right angle_"></span></Link>
                             <ul class="nav nav-pills nav-stacked sideSubMenu">
                                 {menu.subMenu.map( (item) => {
                                     return(
