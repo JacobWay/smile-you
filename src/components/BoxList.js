@@ -2,51 +2,34 @@ import React, {Component} from "react";
 import {render} from "react-dom";
 import axios from "axios";
 import {KTVBox} from "./KTVBox";
+import {fetchBoxListA} from "../actions/boxListA.js";
 
 class BoxList extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             data: []
         }
     }
 
-    getData(){
-        let dataURL = "../../data/box.json";
-        let self = this;
-        axios
-            .get(dataURL)
-            .then(function(result){
-                let data = result.data;
-                if(data.status !== "ok"){
-                    throw data.error;
-                }else{
-                    self.setState({
-                        data: data.data
-                    });
-                }
-            })
-            .catch(function(err){
-                console.log("error in getData of BoxList... ", err);
-            });
-    }
-
     componentDidMount(){
-        this.dataRequest = this.getData();
+        const {dispatch} = this.props;
+        dispatch(fetchBoxListA());
     }
 
     componentWillUnmount(){
-        this.dataRequest.abort();
     }
 
     render(){
-        let boxData = this.state.data;
-        let boxList = boxData.map( (box, i) => {
+        console.log("rendering of c/BoxList.js...");
+        console.log("rendering of c/BoxList.js of props...", this.props);
+        const {boxList} = this.props;
+        const boxListElement = boxList.map( (box, i) => {
             return <KTVBox key={box.box_id} dataBox={box} />
         } )
         return(
             <div>
-                {boxList}
+                {boxListElement}
             </div>
               );
     }

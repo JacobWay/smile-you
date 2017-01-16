@@ -3,24 +3,10 @@ import _ from "lodash";
 import axios from "axios";
 import {Link} from "react-router";
 
-// menu data url
-const menuDataUrl = "../../data/menuData.json";
-
 
 class SideBar extends Component{
     constructor(props){
         super(props);
-    }
-
-    getMenuData = () => {
-        const {setMenuData} = this.props;
-        axios.get(menuDataUrl)
-        .then( (res) => {
-            setMenuData(res.data);
-        } )
-        .catch( (err) => {
-            console.log("error in getMenuData of SideBar.js... ", err);
-        } );
     }
 
     collapseMenu = (e) => {
@@ -62,12 +48,12 @@ class SideBar extends Component{
     }
 
     componentDidMount = () => {
-        this.getMenuData();
         this.collapseMenu();
     }
 
     render(){
-        console.log("in rendering of SideBar.js...");
+        console.log("in rendering of c/SideBar.js...");
+        console.log("in rendering of c/SideBar.js of props...", this.props);
         const {menuList} = this.props;
         let element = (
             <ul class="nav nav-pills nav-stacked sideMenu">

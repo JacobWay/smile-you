@@ -10,20 +10,19 @@ const RECEIVE_ALARMS = "RECEIVE_ALARMS";
 const receiveAlarmsA = (data) => {
     return {
         type: RECEIVE_ALARMS,
-        data: data
+        alarmsObj: data
     }
 }
 
 const fetchAlarmsA = () => {
     return (dispatch) => {
-        let error = "Error in fetching data.";
         
         return axios.get(alarmsDataUrl)
         .then( (res) => {
             const data = res.data;
             console.log("data in axios... ", data);
 
-            dispatch(receiveAlarmsA(data));
+            return dispatch(receiveAlarmsA(data));
         } )
         .catch( (err) => {
             console.log("error in getAlarmsData... ", err);

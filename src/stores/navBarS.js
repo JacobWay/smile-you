@@ -1,13 +1,13 @@
 import {createStore, applyMiddleware} from "redux";
 import thunkMiddleware from "redux-thunk";
 import createLogger from "redux-logger";
-import {navBarR} from "../reducers/navBarR.js";
+import {rootReducer} from "../reducers/index.js";
 
 const loggerMiddleware = createLogger();
 
 const configureStore = () => {
     return createStore(
-        navBarR,
+        rootReducer,
         applyMiddleware(
             thunkMiddleware,
             loggerMiddleware

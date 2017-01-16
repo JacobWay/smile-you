@@ -16,8 +16,7 @@ class NavBar extends Component{
 
     componentDidMount = () => {
         console.log("componentDidMount in c/NavBar.js...");
-        const {dispatch} = this.props;
-        dispatch(fetchAlarmsA());
+        console.log("componentDidMount in c/NavBar.js of props...", this.props);
     }
 
     toggleMenu = (e) => {
@@ -29,7 +28,7 @@ class NavBar extends Component{
     }
 
     render(){
-        console.log("rending in NavBar.js...");
+        console.log("rendering in c/NavBar.js...");
         const {alarmsObj, name} = this.props;
         const {num, alarms} = alarmsObj;
         const element = alarms.map( (item, i) => {

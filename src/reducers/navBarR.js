@@ -6,7 +6,7 @@ const navBarR = (state={
         alarms: ['?']
     }
 }, action) => {
-    const alarmsObj = action.data;
+    const alarmsObj = action.alarmsObj;
     let newState;
     switch (action.type){
         case RECEIVE_ALARMS:
