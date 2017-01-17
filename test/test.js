@@ -46,5 +46,6 @@ describe("reducers", function(){
                 alarms: ["?"]
             }
         };
+        expect(state).toEqual(expectedState);
     });
 });
