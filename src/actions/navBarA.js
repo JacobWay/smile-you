@@ -1,7 +1,12 @@
 import axios from "axios";
+import fetch from "isomorphic-fetch";
 
+const localHost = "http://localhost:9999";
+const uri = "/data/alarmsData.json"
+let debug = false;
 // local json data
-const alarmsDataUrl = "../../data/alarmsData.json"
+let alarmsDataUrl = "../../data/alarmsData.json";
+alarmsDataUrl = debug ? (localHost + uri) : alarmsDataUrl;
 
 const GET_ALARMS = "GET_ALARMS";
 const RECEIVE_ALARMS = "RECEIVE_ALARMS";
@@ -24,10 +29,10 @@ const fetchAlarmsA = () => {
 
             return dispatch(receiveAlarmsA(data));
         } )
-        .catch( (err) => {
-            console.log("error in getAlarmsData... ", err);
-        } );
+        //.catch( (err) => {
+            //console.log("error in fetchAlarmsA... ", err);
+        //} );
     }
 };
 
-export {GET_ALARMS, RECEIVE_ALARMS, fetchAlarmsA};
+export {GET_ALARMS, RECEIVE_ALARMS, fetchAlarmsA, receiveAlarmsA};

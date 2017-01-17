@@ -1,57 +1,37 @@
-
-
-var Promise = function () {
-  this.okCallbacks = [];
-  this.koCallbacks = [];
-};
-
-Promise.prototype = {
-  okCallbacks: null,
-  koCallbacks: null,
-  then: function (okCallback, koCallback) {
-    this.okCallbacks.push(okCallback);
-    if (koCallback) {
-      koCallbacks.push(koCallback);
-    }
-  }
-};
-
-
-var Defer = function () {
-  this.promise = new Promise();
-};
-
-Defer.prototype = {
-  promise: null,
-  resolve: function (data) {
-    this.promise.okCallbacks.forEach(function(callback) {
-      setTimeout(function () {
-        callback(data)
-      }, 0);
-    });
-  },
-
-  reject: function (error) {
-    this.promise.koCallbacks.forEach(function(callback) {
-      setTimeout(function () {
-        callback(error)
-      }, 0);
-    });
-  }
-};
-
-
-function test() {
-  var defer = new Defer();
-  setTimeout( () => {
-      console.log("in time out...");
-      return defer.resolve("xxx");
-  }, 1000);
-  return defer.promise;
+function resolveAfter2Seconds(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
 }
 
-test().then(function (text) {
-  console.log(text);
+async function add1(x) {
+  var a = resolveAfter2Seconds(20);
+  var b = resolveAfter2Seconds(30);
+  return x + await a + await b;
+}
+
+add1(10).then(v => {
+  console.log(v);  // prints 60 after 2 seconds.
 });
 
-export {Defer}
+console.log("?");
+
+function foo(x){
+  const setTimeout = global.setTimeout || window.setTimeout;
+  return new Promise( (resolve) => {
+    setTimeout(() => {
+      resolve(x);
+    }, 1000);
+  });
+}
+
+async function add2(x){
+  var a = foo(1);
+  var b = foo(2);
+  return x + await a + await b;
+}
+
+console.log(add2(3));
+add2(3).then( v => console.log(v));
