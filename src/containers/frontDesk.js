@@ -124,4 +124,4 @@ const BoxWrapper_ = connect(
     mapStateToPropsBox,
     mapDispatchToProps)(BoxWrapper);
 
-export {Main_, BoxWrapper_};
+export {Main, BoxWrapper, Main_, BoxWrapper_};
