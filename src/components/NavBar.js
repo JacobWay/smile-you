@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {uniqueId} from "lodash/uniqueId";
+import _ from "lodash";
 import axios from "axios";
 import {fetchAlarmsA} from "../actions/navBarA.js";
 
@@ -51,7 +51,9 @@ class NavBar extends Component{
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                     role="button" aria-haspopup="true" aria-expanded="false">
                                     <span class="fa fa-envelope"></span>
+                                    {" "}
                                     消息
+                                    {" "}
                                     <span class="badge">{num}</span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -62,7 +64,7 @@ class NavBar extends Component{
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                     role="button" aria-haspopup="true" aria-expanded="false">
                                     <span class="fa fa-user"></span>
-                                    用户{name}
+                                    {" "}用户{" "}{name}
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">

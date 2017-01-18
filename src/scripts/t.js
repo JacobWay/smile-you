@@ -1,37 +1,75 @@
-function resolveAfter2Seconds(x) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(x);
-    }, 2000);
-  });
-}
 
-async function add1(x) {
-  var a = resolveAfter2Seconds(20);
-  var b = resolveAfter2Seconds(30);
-  return x + await a + await b;
-}
 
-add1(10).then(v => {
-  console.log(v);  // prints 60 after 2 seconds.
-});
 
-console.log("?");
-
-function foo(x){
-  const setTimeout = global.setTimeout || window.setTimeout;
-  return new Promise( (resolve) => {
-    setTimeout(() => {
-      resolve(x);
-    }, 1000);
-  });
-}
-
-async function add2(x){
-  var a = foo(1);
-  var b = foo(2);
-  return x + await a + await b;
-}
-
-console.log(add2(3));
-add2(3).then( v => console.log(v));
+{
+      root:
+       ShallowWrapper {
+         root: [Circular],
+         unrendered:
+          { '$$typeof': Symbol(react.element),
+            type: [Function: NavBar],
+            key: null,
+            ref: null,
+            props: [Object],
+            _owner: null,
+            _store: {} },
+         renderer:
+          ReactShallowRenderer {
+            _instance: [Object],
+            render: [Function: render],
+            getRenderOutput: [Function: getRenderOutput] },
+         node:
+          { '$$typeof': Symbol(react.element),
+            type: 'nav',
+            key: null,
+            ref: null,
+            props: [Object],
+            _owner: null,
+            _store: {} },
+         nodes: [ [Object] ],
+         length: 1,
+         options: {},
+         complexSelector:
+          ComplexSelector {
+            buildPredicate: [Function: buildPredicate],
+            findWhereUnwrapped: [Function: findWhereUnwrapped],
+            childrenOfNode: [Function: childrenOfNode] } },
+      unrendered: null,
+      renderer: null,
+      node:
+       { '$$typeof': Symbol(react.element),
+         type: 'a',
+         key: null,
+         ref: null,
+         props:
+          { href: '#',
+            className: 'dropdown-toggle',
+            'data-toggle': 'dropdown',
+            role: 'button',
+            'aria-haspopup': 'true',
+            'aria-expanded': 'false',
+            children: [Object] },
+         _owner: null,
+         _store: {} },
+      nodes:
+       [ { '$$typeof': Symbol(react.element),
+           type: 'a',
+           key: null,
+           ref: null,
+           props: [Object],
+           _owner: null,
+           _store: {} },
+         { '$$typeof': Symbol(react.element),
+           type: 'a',
+           key: null,
+           ref: null,
+           props: [Object],
+           _owner: null,
+           _store: {} } ],
+      length: 2,
+      options: {},
+      complexSelector:
+       ComplexSelector {
+         buildPredicate: [Function: buildPredicate],
+         findWhereUnwrapped: [Function: findWhereUnwrapped],
+         childrenOfNode: [Function: childrenOfNode] } }
