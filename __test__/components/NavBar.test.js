@@ -20,7 +20,7 @@ function setup(){
         props,
         NavBarWrapper,
         NavBarElement
-    }
+    };
 }
 
 describe("components <NavBar />", () => {
@@ -28,6 +28,12 @@ describe("components <NavBar />", () => {
         const {NavBarWrapper} = setup();
 
         expect(NavBarWrapper.find(".collapse .navbar-collapse").length).to.equal(1);
+    });
+
+    it("test component props default value", () => {
+        const {props} = setup();
+        expect(props.name).to.equal("Jacob");
+        expect(props.alarmsObj).to.deep.equal({num: -1, alarms: []});
     });
 
 });
