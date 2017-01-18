@@ -31,5 +31,5 @@ const fetchBoxListA = () => {
 }
 
 
-export {RECEIVE_BOXLIST, fetchBoxListA};
+export {RECEIVE_BOXLIST, receiveBoxListA, fetchBoxListA};
 

@@ -26,5 +26,5 @@ const fetchSideBarA = () => {
     }
 }
 
-export {RECEIVE_SIDEBAR, fetchSideBarA};
+export {RECEIVE_SIDEBAR, receiveSideBarA, fetchSideBarA};
 
