@@ -36,4 +36,7 @@ describe("components <NavBar />", () => {
         expect(props.alarmsObj).to.deep.equal({num: -1, alarms: []});
     });
 
+    it("simulate click event", () => {
+        // todo
+    });
 });

@@ -47,8 +47,8 @@ class NavBar extends Component{
 
                     <div class="collapse navbar-collapse" id={this.mobileMenuId}>
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle alarms" data-toggle="dropdown"
                                     role="button" aria-haspopup="true" aria-expanded="false">
                                     <span class="fa fa-envelope"></span>
                                     {" "}
