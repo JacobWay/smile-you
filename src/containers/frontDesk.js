@@ -124,4 +124,6 @@ const BoxWrapper_ = connect(
     mapStateToPropsBox,
     mapDispatchToProps)(BoxWrapper);
 
+console.log("Main in C/frontDesk.js ... ", Main);
+console.log("Main_ in C/frontDesk.js ... ", Main_);
 export {Main, BoxWrapper, Main_, BoxWrapper_};
