@@ -10,7 +10,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "jest": "jest",
-    "jest:watch": "npm jest -- --watch",
+    "jest:watch": "npm jest --watch",
     "dev": "webpack-dev-server --hot --inline --colors",
     "build": "rm -rf ./dist/* && NODE_ENV=production webpack"
   },
@@ -31,6 +31,7 @@
     "babel-preset-react": "^6.16.0",
     "chai": "^3.5.0",
     "css-loader": "^0.26.1",
+    "enzyme": "^2.7.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "jest": "^18.1.0",
     "mocha": "^3.2.0",
