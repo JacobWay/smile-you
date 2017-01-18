@@ -1,7 +1,7 @@
 import {
     RECEIVE_BOXLIST,
     receiveBoxListA
-} from "../src/actions/boxListA.js";
+} from "../../src/actions/boxListA.js";
 
 
 describe("actions", function(){

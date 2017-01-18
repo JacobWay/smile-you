@@ -1,7 +1,7 @@
 import {
     RECEIVE_SIDEBAR,
     receiveSideBarA
-} from "../src/actions/sideBarA.js";
+} from "../../src/actions/sideBarA.js";
 
 
 describe("actions", function(){

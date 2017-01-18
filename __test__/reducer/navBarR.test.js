@@ -1,7 +1,7 @@
 import {
     RECEIVE_ALARMS,
-} from "../src/actions/navBarA.js";
-import {navBarR} from "../src/reducers/navBarR.js";
+} from "../../src/actions/navBarA.js";
+import {navBarR} from "../../src/reducers/navBarR.js";
 
 
 describe("reducers", function(){
