@@ -3,7 +3,7 @@ var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var rootPath = path.join(__dirname); 
 var outputPath = path.join(__dirname, "dist"); 
-var publicPath = "/dist";
+var publicPath = "/dist/";
 var scssPath = path.join(__dirname, "src/scss");
 var debug = process.env.NODE_ENV !== "production";
 
@@ -96,7 +96,8 @@ moduleObj.loaders = loaders;
  * plugins
  */
 var plugins = [];
-plugins.push(new ExtractTextPlugin("css/[name].css"));
+var pluginsProduction = [];
+!debug && plugins.push(new ExtractTextPlugin("css/[name].css"));
 
 plugins.push(
     new webpack.ProvidePlugin({
@@ -105,9 +106,25 @@ plugins.push(
     })
 );
 
+if(!debug){
+    pluginsProduction = [
+        new ExtractTextPlugin("css/[name].css"),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: true
+            }
+        })
+    ] ;
+    plugins = plugins.concat(pluginsProduction);
+}
 
 module.exports = {
-    devtool: "inline-source-map",
+    devtool: debug ? "inline-source-map" : "",
     entry: entry,
     output: output,
     module: moduleObj,
