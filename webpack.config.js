@@ -1,11 +1,11 @@
-var webpack = require('webpack');
-var path = require('path');
+var webpack = require("webpack");
+var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var rootPath = path.join(__dirname); 
 var outputPath = path.join(__dirname, "dist"); 
 var publicPath = "/dist/";
 var scssPath = path.join(__dirname, "src/scss");
 var debug = process.env.NODE_ENV !== "production";
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 /*
@@ -35,7 +35,7 @@ var entry = {
  */
 var output = {
     path: outputPath,
-    filename: "js/[name].bundle.js",
+    filename: "js/[name].[hash].bundle.js",
     publicPath: publicPath
 };
 
@@ -83,9 +83,11 @@ loaderProd = {
 loaderScss = debug ? loaderDev : loaderProd;
 loaders.push(loaderScss);
 
+const fontPublicPath = path.join(output.publicPath, "");
+const fontOutputPath = path.join(output.path, "");
 loader = [
-    { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
-    { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+    { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff&name=font/[name].[hash:8].[ext]&publicPath="+fontPublicPath+"&outputPath="+fontOutputPath},
+    { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=font/[name].[hash:8].[ext]&publicPath="+fontPublicPath+"&outputPath="+fontOutputPath }
 ];
 loaders = loaders.concat(loader);
 
@@ -97,18 +99,17 @@ moduleObj.loaders = loaders;
  */
 var plugins = [];
 var pluginsProduction = [];
-!debug && plugins.push(new ExtractTextPlugin("css/[name].css"));
 
 plugins.push(
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: 'jquery'
+        $: "jquery",
+        jQuery: "jquery"
     })
 );
 
 if(!debug){
     pluginsProduction = [
-        new ExtractTextPlugin("css/[name].css"),
+        new ExtractTextPlugin("css/[name].[hash].css"),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")
@@ -116,12 +117,20 @@ if(!debug){
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                warnings: true
+                warnings: false
             }
-        })
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin()
     ] ;
     plugins = plugins.concat(pluginsProduction);
 }
+
+plugins.push(
+    new HtmlWebpackPlugin({
+        template: path.join(__dirname, "src/templates/frontDesk.html"),
+        filename: path.join(output.path, "html/frontDesk.html")
+    })
+);
 
 module.exports = {
     devtool: debug ? "inline-source-map" : "",
@@ -131,7 +140,7 @@ module.exports = {
     plugins: plugins,
     devServer: {
         contentBase: "./",
-        host: '127.0.0.1',
+        host: "127.0.0.1",
         port: 9999,
         publicPath: output.publicPath,
     }
