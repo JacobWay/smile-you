@@ -35,7 +35,7 @@ var entry = {
  */
 var output = {
     path: outputPath,
-    filename: "js/[name].[hash].bundle.js",
+    filename: `js/[name].${debug? "" : "[hash]."}bundle.js`,
     publicPath: publicPath
 };
 
@@ -78,7 +78,7 @@ loaderProd = {
     test: /\.scss$/,
     exclude: /(node_modules|bower_components)/,
     include: scssPath,
-    loader: ExtractTextPlugin.extract(["css?sourceMap", "sass"])
+    loader: ExtractTextPlugin.extract(["css", "sass"])
 };
 loaderScss = debug ? loaderDev : loaderProd;
 loaders.push(loaderScss);
@@ -109,7 +109,6 @@ plugins.push(
 
 if(!debug){
     pluginsProduction = [
-        new ExtractTextPlugin("css/[name].[hash].css"),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")
@@ -120,16 +119,17 @@ if(!debug){
                 warnings: false
             }
         }),
-        new webpack.optimize.OccurrenceOrderPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, "src/templates/frontDesk.html"),
+            filename: path.join(output.path, "pages/frontDesk.html"),
+        })
     ] ;
     plugins = plugins.concat(pluginsProduction);
 }
 
 plugins.push(
-    new HtmlWebpackPlugin({
-        template: path.join(__dirname, "src/templates/frontDesk.html"),
-        filename: path.join(output.path, "html/frontDesk.html")
-    })
+    new ExtractTextPlugin(`css/[name]${debug ? "" : ".[hash]."}.css`)
 );
 
 module.exports = {
