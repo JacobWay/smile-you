@@ -3,6 +3,7 @@ The Front Engineering Project
 
 ## Philosophy & Ideas:
 Front-end and back-end indepently(seprately) developing
+
 The front-end engineering workflow
 
 ## Module Bundler, Optimization Tools
