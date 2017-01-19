@@ -3,7 +3,7 @@ var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var debug = process.env.NODE_ENV !== "production";
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-var tmpDir = "/smile-you/";
+var tmpDir = "/dist/";
 var outputPath = path.join(__dirname, tmpDir); 
 var scssPath = path.join(__dirname, "src/scss");
 var publicPath = tmpDir;

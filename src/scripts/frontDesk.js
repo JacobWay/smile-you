@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import {configureStore} from "../stores/navBarS.js";
 import {Main_, BoxWrapper_} from "../containers/frontDesk.js";
 
-require('font-awesome/css/font-awesome.css');
+//require('font-awesome/css/font-awesome.css');
 require("../scss/base.scss");
 require("../scss/frontDesk.scss");
 require("../scss/lightTheme.scss");
