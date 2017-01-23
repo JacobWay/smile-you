@@ -1,3 +1,5 @@
+[![build status](https://travis-ci.org/JacobWay/smile-you.svg?branch=master&style=flat-square)](https://travis-ci.org/JacobWay/smile-you)
+
 ## Name:
 The Front Engineering Project
 
